@@ -1,0 +1,6 @@
+module Pods_Deskaunt {
+  umbrella header "Pods-Deskaunt-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+module Pods_Deskaunt_DeskauntTests {
+  umbrella header "Pods-Deskaunt-DeskauntTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
