@@ -1,10 +1,11 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import NavigationStyles from './styles';
 import * as React from 'react';
-
+import {IconButton} from 'react-native-paper';
 import LoginScreen from '../screens/LoginScreen/index';
 import Carousel from '../screens/Carousel/index';
-
+import leftArrow from '../assets/images/left-arrow.png';
+import Colors from '../constants/index';
 const Stack = createStackNavigator();
 
 // TODO Add const, replace icon logic using notification logic and icon logic also
@@ -24,10 +25,11 @@ const customHeader = (navigation) => {
     ),
     headerLeft: () => (
       <IconButton
-        icon={navigation.route.name === 'Email Sign In' ? 'arrow-left' : 'menu'}
-        color={Colors.white}
+        //icon={navigation.route.name === 'Email Sign In' ? 'arrow-left' : 'menu'}
+        icon={leftArrow}
+        color={Colors.RIGHT_ARROW}
         size={20}
-        style={NavigationStyles.headerRight}
+        style={NavigationStyles.headerLeftIcon}
         onPress={() => {
           navigation.route.name === 'Email Sign In'
             ? navigation.navigation.goBack()
@@ -49,7 +51,16 @@ function AppNavigator() {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{headerShown: false}}
+        options={{
+          headerShown: true,
+          headerRight: null,
+          headerStyle: {
+            backgroundColor: '#FFF',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+          },
+        }}
       />
     </Stack.Navigator>
   );
